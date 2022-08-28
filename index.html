@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Clipboard landing page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,6 +18,7 @@
       box-sizing: border-box;
       padding:0;
       margin:0;
+      font-family: 'Bai Jamjuree', sans-serif;
     }
     .container{
       display:flex;
@@ -48,13 +51,13 @@
     .flex{
       display:flex;
       justify-content: space-evenly;
-      align-items: center;
-      
+      align-items: center;      
     }
     
     .header>h3{
       font-weight: 600;
       font-size:2rem;
+      text-align:center;
       color: hsl(210, 10%, 33%);
     }
     .section>h3{
@@ -88,6 +91,16 @@
       width:50%;
       margin:auto;
     }
+    .w-30{
+      width:20%;
+      margin:auto;
+    }
+    .mt-5{
+      margin-top:5rem;
+    }
+    .mb-5{
+      margin-bottom:5rem;
+    }
     .sec{
       padding-left:10rem;
       margin-bottom:1.5rem;
@@ -105,9 +118,69 @@
       line-height:1.4rem;
     }
     
-    @media-screen and (max-width:420px){
-
+    @media screen and (max-width: 480px) {
+      .container{
+      display:flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2.5rem;
+      background:url("./images/bg-header-mobile.png");
+      height:100vh;
+      width:100%;
+      background-size: contain;
+      background-repeat:no-repeat;
     }
+    .header{
+      padding:2rem
+    }
+    .button{
+      padding:1rem .75rem;
+      border-radius:32px;
+      box-shadow:;
+      color:#fff;
+      width:90%;
+      margin:auto;
+      margin-top:1rem;
+      border:none;
+      cursor:pointer;
+    }
+    .button:hover{
+      cursor:pointer;
+    }
+    .flex,.flex-section{
+      flex-direction:column;
+    }
+    .img{
+      width:90%;
+      height:100%;
+      margin:auto !important;
+    }
+    .w-50{
+      width:100%;
+      margin:auto !important;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction:column;
+    }
+    .sec{
+      padding:2rem;
+      margin-bottom:1.5rem;
+    }
+    .section{
+      width:100%;
+    }
+    .flex>img{
+      margin-bottom:3rem;      
+    }
+    .w-30.section{
+      padding-top:.5rem;
+    }
+    .pt-5{
+      padding-top:2rem;
+    }
+   }
   </style>
 </head>
 <body>
@@ -126,7 +199,7 @@
       </div>
     </div>
   </div>
-  <div class='section'>
+  <div class=' header'>
     <h3> Keep track of your snippets</h3>
     <p>  Clipboard instantly stores any item you copy in the cloud, 
   meaning you can access <br/> your snippets immediately on all your 
@@ -135,7 +208,7 @@
   </div>
   <div class='flex-section'>
     <div class='w-50'>
-      <img src='./images/image-computer.png' alt=''/>
+      <img class='img' src='./images/image-computer.png' alt=''/>
     </div>
     <div class='w-50'>
       <div class='sec'>
@@ -153,85 +226,82 @@
     </div>
   </div>
   <div class='section'>
-    <!-- <div class='logo'>
-      <img src='./images/logo.svg' alt=''/>
-    </div> -->
     <div class='header'>
-      <h3 style='text-aliz'>Access Clipboard anywhere</h3>
+      <h3 style='text-align:center'>Access Clipboard anywhere</h3>
       <p>Whether you’re on the go, or at your computer, you can access all your Clipboard 
        <br/> snippets in a few simple clicks.</p>
-      <!-- <div class='flex'>
-        <button class='button green'> Download for iOS</button>
-        <button class='button blue'>Download for Mac </button>
-      </div> -->
-      <div class='logo'>
-        <img src='./images/image-devices.png' alt=''/>
+      <div class='logo' style='margin-top:2rem'>
+        <img class='img' src='./images/image-devices.png' alt=''/>
       </div> 
     </div>
   </div>
+  <div class='flex-section'>
+    <div class='header'>
+      <h3 style='text-align:center'>Supercharge your workflow </h3>
+      <p>We’ve got the tools to boost your productivity.</p>
+      <div class='flex-section ' >
+        <div class='w-30 section'>
+          <img  src='./images/icon-blacklist.svg' alt=''/><br/><br/>
+          <h3 style='font-size:1.5rem;font-weight:600'>Create blacklists </h3>
+          <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.
+          </p>
+        </div>
+        <div class='w-30 section'>
+          <img  src='./images/icon-text.svg' alt=''/><br/><br/>
+          <h3 style='font-size:1.5rem;font-weight:600'>Plain text snippets</h3>
+          <p>Remove unwanted formatting from copied text for a consistent look. </p>
+        </div>
+        <div class='w-30 section'>
+          <img  src='./images/icon-preview.svg' alt=''/><br/><br/>
+          <h3 style='font-size:1.5rem;font-weight:600'>Sneak preview</h3>
+          <p> Quick preview of all snippets on your Clipboard for easy access.</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div  class='mt-5 flex'>
+    <img  src='./images/logo-google.png' alt=''/>
+    <img  src='./images/logo-ibm.png' alt=''/>
+    <img  src='./images/logo-microsoft.png' alt=''/>
+    <img  src='./images/logo-hp.png' alt=''/>
+    <img  src='./images/logo-vector-graphics.png' alt=''/>
+  </div>
+  <div  class='mt-5 mb-5 section'>
+    <div class='header'>
+      <h3 style="text-align:center" >Clipboard for iOS and Mac OS</h3>
+      <p> Available for free on the App Store. Download for Mac or iOS, sync with iCloud 
+        and <br/> you’re ready to start adding to your clipboard.</p>
+      <div class='flex'>
+        <button class='button green'> Download for iOS</button>
+        <button class='button blue'>Download for Mac </button>
+      </div>
+    </div>
+  </div>
+  <div class='flex-section pt-5' style="background:#f1f1f1;">
+    
+    <div class='w-30 section'>
+      <img src='./images/logo.svg' width='20%' height='20%' alt=''/>
+    </div>
+    <div class='w-30 section'>
+      <p> FAQs</p>
+      <p>  Contact Us </p>
+    </div>
+    <div class='w-30 section'>
+      <p> Privacy Policy</p>
+      <p>  Press Kit </p>
+    </div> 
+    <div class='w-30 section'>
+      <p>  Install Guide </p>
+    </div>   
+  </div>
 </div>
-  
-
-  
-
-  
-  
-
-  
-
- 
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  Whether you’re on the go, or at your computer, you can access all your Clipboard 
-  snippets in a few simple clicks.
-
-  Supercharge your workflow
-
-  We’ve got the tools to boost your productivity.
-
-  Create blacklists
-
-  Ensure sensitive information never makes its way to your clipboard by excluding certain sources.
-
-  Plain text snippets
-
-  Remove unwanted formatting from copied text for a consistent look.
-
-  Sneak preview
-
-  Quick preview of all snippets on your Clipboard for easy access.
-
-  Clipboard for iOS and Mac OS
-
-  Available for free on the App Store. Download for Mac or iOS, sync with iCloud 
-  and you’re ready to start adding to your clipboard.
-
-  Download for iOS
-  Download for Mac
-
-  FAQs
-  Contact Us
-  Privacy Policy
-  Press Kit
-  Install Guide
-  
-  <footer>
+    
+    
+  <!-- <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
     </p>
-  </footer>
+  </footer> -->
 </body>
 </html>
